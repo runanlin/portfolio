@@ -8,18 +8,15 @@
     <style>
       body {
         font-family: Arial, sans-serif;
-        width: 90vw;
+        max-width: 50vw;
         margin: 0 auto;
         padding: 20px;
         box-sizing: border-box;
       }
 
-      h1 {
-        text-align: center
-      }
-
+      h1,
       #about {
-        text-align: center
+        text-align: center;
       }
 
       .collapsible {
@@ -39,37 +36,46 @@
         background-color: #555;
       }
 
-      .content {
+      .content,
+      .project {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
         padding: 0 18px;
-        display: none;
-        overflow: hidden;
         background-color: #f1f1f1;
-      }
-
-      .project_image {
-        max-width: 100%;
-        height: auto;
-        display: block;
-        margin: 0 auto;
-        padding: 10px 0;
       }
 
       .section {
         flex: 1 1 30%;
-        padding: 10px;
+        max-width: 200px;
         box-sizing: border-box;
         margin-bottom: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .project-image {
+        width: 100%;
+        height: 0;
+        padding-top: 100%;
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        margin: 10px 0;
       }
 
       @media (max-width: 800px) {
         .section {
           flex-basis: 48%;
+          /* Allows 2 columns layout on medium screens */
         }
       }
 
       @media (max-width: 600px) {
         .section {
           flex-basis: 100%;
+          /* Full width for small screens, stacking them */
         }
       }
     </style>
@@ -88,7 +94,7 @@
       <button class="collapsible">tabletop games</button>
       <div class="project">
         <div class="section">
-          <img img class="project_image" src="images/reddivide.png" alt="An image of a card used in the game ''The Red Divide''">
+          <div class="project-image" style="background-image: url('images/reddivide.png');"></div>
           <a href="https://drive.google.com/drive/folders/1ddjgGkDundfh3r3M8MQ-S27n62Nfz93e?usp=drive_link">
             <h3>The Red Divide</h3>
           </a>
