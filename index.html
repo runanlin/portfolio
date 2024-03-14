@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - Andrew Lin</title>
+
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      .collapsible {
+        background-color: #777;
+        color: white;
+        cursor: pointer;
+        padding: 18px;
+        width: 100%;
+        border: none;
+        text-align: left;
+        outline: none;
+        font-size: 15px;
+      }
+
+      .active,
+      .collapsible:hover {
+        background-color: #555;
+      }
+
+      .content {
+        .content {
+          padding: 0 18px;
+          display: none;
+          overflow: hidden;
+          background-color: #f1f1f1;
+        }
+
+        .project {
+          background-color: #f1f1f1;
+          display: flex;
+          justify-content: space-between;
+          flex-wrap: wrap;
+        }
+
+        .section {
+          flex: 1 1 30%;
+          padding: 10px;
+          box-sizing: border-box;
+          margin-bottom: 20px;
+        }
+
+        @media (max-width: 800px) {
+          .section {
+            flex-basis: 48%;
+          }
+        }
+
+        @media (max-width: 600px) {
+          .section {
+            flex-basis: 100%;
+          }
+        }
+    </style>
+
+  </head>
+  <body>
+    <h1>Andrew Lin</h1>
+    <div>
+      <h2>about me</h2>
+      <p>hi! i am andrew lin, a third-year undergraduate student at the <i>university of chicago</i>. i major in <i>sociology</i> and <i>media arts and design</i>, and i am very passionate about games and play. i seek to both examine them as cultural objects, and try to incorporate my own reflections of sociology into my design process.</p>
+      <p>i have mostly worked on team projects and i really value coordination and communication in the game design process. i am also eager to apply my academic learnings, especially my study of the sociology of culture, in real-world contexts.</p>
+      <p>please feel free to browse through my portfolio to see my projects, accomplishments, and the skills i bring to the table!</p>
+    </div>
+
+    <div class="collapsible-section">
+      <button class="collapsible">my projects</button>
+      <div class="content">
+        <div class="section">Section 1 Content...</div>
+        <div class="section">Section 2 Content...</div>
+        <div class="section">Section 3 Content...</div>
+      </div>
+    </div>
+
+    <div class="collapsible-section">
+      <button class="collapsible">contact</button>
+      <div class="content">
+        <p>This is a paragraph with my contact information...</p>
+      </div>
+    </div>
+
+    <div class="collapsible-section">
+      <button class="collapsible">my cv</button>
+      <div class="content">
+        <p>This is a paragraph with my contact information...</p>
+      </div>
+    </div>
+
+    <script>
+      const collapsibles = document.getElementsByClassName("collapsible");
+
+      for (let i = 0; i < collapsibles.length; i++) {
+        collapsibles[i].addEventListener("click", function() {
+          this.classList.toggle("active");
+          const content = this.nextElementSibling;
+          content.style.display = content.style.display === "block" ? "none" : "block";
+        });
+      }
+    </script>
+
+  </body>
+</html>
