@@ -38,11 +38,11 @@
 
       .content,
       .project {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-around;
+        display: none;
         padding: 0 18px;
         background-color: #f1f1f1;
+        flex-wrap: wrap;
+        justify-content: space-around;
       }
 
       .section {
@@ -136,15 +136,21 @@
     </div>
 
     <script>
-      const collapsibles = document.getElementsByClassName("collapsible");
+      document.addEventListener("DOMContentLoaded", function() {
+        const collapsibles = document.getElementsByClassName("collapsible");
 
-      for (let i = 0; i < collapsibles.length; i++) {
-        collapsibles[i].addEventListener("click", function() {
-          this.classList.toggle("active");
-          const content = this.nextElementSibling;
-          content.style.display = content.style.display === "block" ? "none" : "block";
-        });
-      }
+        for (let i = 0; i < collapsibles.length; i++) {
+          collapsibles[i].addEventListener("click", function() {
+            this.classList.toggle("active");
+            const content = this.nextElementSibling;
+            if (content.style.display === "flex") {
+              content.style.display = "none";
+            } else {
+              content.style.display = "flex"; // Here is the adjustment
+            }
+          });
+        }
+      });
     </script>
   </body>
 </html>
