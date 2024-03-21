@@ -12,8 +12,6 @@
     <style>
       body {
         font-family: 'Quicksand', Arial, sans-serif;
-        ;
-        max-width: 60vw;
         margin: 0 auto;
         padding: 20px;
         box-sizing: border-box;
@@ -103,6 +101,9 @@
       
       /* Checking user's display size and optimizing display */
       @media (max-width: 800px) {
+        body {
+          max-width: 60vw;
+        }
         .section {
           flex-basis: 48%;
           /* Allowing 2 columns layout on medium screens */
@@ -110,6 +111,9 @@
       }
 
       @media (max-width: 600px) {
+        body {
+          max-width: 90vw;
+        }
         .section {
           flex-basis: 100%;
           /* Full width for small screens, stacking them */
